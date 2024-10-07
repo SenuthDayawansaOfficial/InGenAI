@@ -1,0 +1,41 @@
+:root {
+    --mainBgColor: #0077ff;
+    --color: #4e93ee;
+    --white: #FFFFFF;
+    --highlightColor: #F5DEB3;
+    --black: #000000;
+}
+nav {
+    height: auto;
+}
+nav #navCont img {
+    margin-left: 10px;
+}
+nav #navCont {
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+}
+nav #navCont #navBtnCont {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+nav #navCont #navBtnCont a {
+    margin-top: 8px;
+}
+nav #navCont #navLBtnCont {
+    visibility: hidden;
+}
+/* userHeader */
+#navLBtnCont {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color: var(--mainBgColor);
+}
+#navLBtnCont a {
+    padding: 10px;
+    text-decoration: none;
+    color: var(--mainBgColor);
+}

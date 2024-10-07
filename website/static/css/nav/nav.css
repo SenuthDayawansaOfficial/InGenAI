@@ -1,0 +1,57 @@
+:root {
+    --mainBgColor: #0077ff;
+    --color: #4e93ee;
+    --white: #FFFFFF;
+    --highlightColor: #F5DEB3;
+    --black: #000000;
+}
+nav {
+    height: 12vh
+}
+nav #navCont {
+    padding: 10px;
+    margin: 10px;
+    /* background-color: var(--mainBgColor); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+}
+nav #navCont a {
+    text-decoration: none;
+    margin-left: 20px;
+}
+nav #navCont img {
+    height: 64px;
+}
+nav #navCont #navBtnCont a {
+    color: var(--color);
+    transition: 0.5s;
+}
+nav #navCont #navBtnCont a:hover {
+    color: var(--black);
+}
+nav #navCont #navLBtnCont a {
+    transition: 0.5s;
+}
+nav #navCont #navLBtnCont a:nth-child(1) {
+    margin-right: -16px;
+    padding: 10px 20px;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+nav #navCont #navLBtnCont a:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    background: linear-gradient(90deg, var(--mainBgColor), red);
+    z-index: -1;
+}
+nav #navCont #navLBtnCont a:hover {
+    color: var(--highlightColor);
+}

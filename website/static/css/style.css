@@ -1,0 +1,49 @@
+:root {
+    --mainBgColor: #0077ff;
+    --color: #4e93ee;
+    --white: #FFFFFF;
+    --highlightColor: #F5DEB3;
+    --black: #000000;
+}
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Fredoka';
+    font-weight: 500;
+    font-size: 20px;
+    background-color: whitesmoke;
+}
+#footer {
+    height: 24vh;
+    font-weight: 400;
+    margin: 10px;
+    padding: 10px;
+    border-top: 2px solid var(--black);
+}
+#footer a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 16px;
+}
+#footer a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+#footer #footerLinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#footer #footerLinks div {
+    display: flex;
+    flex-direction: column;
+}
+#footer footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#footer footer div i {
+    cursor: pointer;
+    margin-left: 16px;
+}

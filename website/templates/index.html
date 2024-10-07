@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!---->
+    {% block title %}
+    <title>The New Brain Of New Gen | InGen AI LCC</title>
+    {% endblock %}
+    <!---->
+    
+    <!-- ICO -->
+    <link rel="icon" href="/static/images/logo.ico">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <script src="https://kit.fontawesome.com/64144f15a2.js" crossorigin="anonymous"></script>
+    
+    <!-- FONTS(GOOGLE) -->
+    <!-- FREDOKA -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/nav/nav.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard/accountControl.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mediaScreenBreaks.css') }}">
+
+    <!---->
+    {% block link %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/specials/index.css') }}">
+    {% endblock %}
+    <!---->
+    
+    <!-- ACC SETTINGS - CSS -->
+    <style>
+        .show {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <!---->
+    <section id="mainContent">
+        <nav>
+            {% if user.is_authenticated %}
+            <div id="navCont">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+                <div id="navBtnCont">
+                    <a href="/">Home</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/faq">FAQ</a>
+                    <a href="/register">Pre-Register</a>
+                </div>
+                <div id="navLBtnCont">
+                    <a href="/app">{{ current_user.first_name }}</a>
+                    <a href="/logout"><i class="fa-solid fa-power-off"></i></a>
+                </div>
+            </div>
+            {% else %}
+            <div id="navCont">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+                <div id="navBtnCont">
+                    <a href="/">Home</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/faq">FAQ</a>
+                    <a href="/register">Pre-Register</a>
+                </div>
+                <div id="navLBtnCont">
+                    <a href="/login">Login</a>
+                </div>
+            </div>
+            {% endif %}
+        </nav>
+        <div id="heroSect" style="height: max-content;">
+            {% block content %}
+            <!--  -->
+            <div id="introCont">                
+                <h1>InGen.AI</h1>
+                <h2>The next generation of imagination</h2>
+                <div id="introNav">
+                    <a href="">Try Now</a>
+                    <a href="">Register</a>
+                    <a href="">Documentation</a>
+                </div>
+                <div id="introTxt">
+                    <div>
+                        <p>
+                            In today's digital word, efficiency is paramount. Join with InGen.AI, a groundbreaking app developed to manage your tasks through advanced artificial intelligence. Whether you’re a professional, a student, or anyother person, InGen.AI will transform the way you work, analize, manage, collaborate, and innovate with the tasks.
+                        </p>
+                    </div>
+                    <div>
+                        <h2>Key Features of InGen.AI</h2>
+                        <ul>
+                            <li><strong>Smart Task Management:</strong> Analize and categorizes & prioritizes the tasks based on your preferences.</li>
+                            <li><strong>Natural Language Processing:</strong> Interact through voice or text naturally.</li>
+                            <li><strong>Data Insights and Analytics:</strong> Performance tracking</li>
+                            <li><strong>Integration with Popular Apps:</strong> Connect and work with Google Drive, Slack, Jira and more.</li>
+                            <li><strong>Security and Privacy First:</strong> Ensures data safety with E2E encryption.</li>
+                        </ul>
+                    </div>
+            
+                    <div>
+                        <h2>How InGen.AI Works</h2>
+                        <p>Upon downloading and setting up the app, users are guided through a simple onboarding process that tailors the experience to their individual needs. The intuitive interface makes it easy to navigate, with clear menus and help sections available.</p>
+                        <p>InGen.AI operates in real-time, meaning that it updates task lists and collaboration efforts instantly, ensuring that everyone is on the same page.</p>
+                    </div>
+            
+                    <div>
+                        <h2>The Future of Productivity</h2>
+                        <p>As artificial intelligence continues to evolve, InGen.AI stands at the forefront of this revolution, offering users an intelligent partner in their everyday tasks.</p>
+                    </div>
+            
+                    <div>
+                        <h2>Download InGen.AI Today!</h2>
+                        <p>Are you ready to transform the way you work?</p>
+                    </div>
+                </div>
+            </div>
+            {% endblock %}
+        </div>
+    </section>
+    <!---->
+    <section style="display: flex; align-items: center; justify-content: space-evenly;">
+        <div id="settingsCont">
+            <div>
+                <a href="" id="closeBtn" onclick="toggles()" style="display: flex; align-items: right; justify-content: flex-end;">X</a>
+                <p style="font-size: 24px;">Account</p>
+                <p>Name: {{ current_user.first_name }}</p>
+                <p>Email: {{ current_user.email }}</p>
+                <div class="update-section">
+                    <form method="POST" action="{{ url_for('views.update_name') }}">
+                        <div class="form-group">
+                            <label for="firstName">Change Name:</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter new name" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Change</button>
+                    </form>
+                    {% with messages = get_flashed_messages() %}
+                      {% if messages %}
+                        <div class="alert alert-info">
+                          {% for message in messages %}
+                            <p>{{ message }}</p>
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+                    {% endwith %}
+                </div>
+                <br/><br/>
+            </div>
+        </div>
+    </section>
+    <!---->
+    <div id="footer">
+        <div id="footerCont">
+            <div id="footerLinks">
+                <div>
+                    <a href="">Register</a>
+                    <a href="">Privacy Policy</a>
+                </div>
+                <div>
+                    <a href="">About</a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>Copyright © 2024 Devans</p>
+            <div>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-discord"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-square-instagram"></i>
+            </div> 
+        </footer>
+    </div>
+    <!---->
+
+    <!-- SCRIPTS -->
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/accountSettings.js') }}"></script>
+
+</body>
+
+</html>

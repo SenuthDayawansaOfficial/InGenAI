@@ -1,0 +1,31 @@
+@media screen and (max-width: 920px){
+    #heroSect {
+        padding-left: 50px;
+        padding-right: 50px;
+        margin: 10px;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    nav #navCont {
+        flex-direction: column;
+    }
+    nav #navCont #navLBtnCont {
+        margin-top: 16px;
+    }
+    #settingsCont {
+        zoom: 67%;
+    }
+
+}
+
+@media screen and (max-width: 395px){
+    nav #navCont #navBtnCont {
+        display: flex;
+        flex-direction: column;
+    }
+    #heroSect {
+        margin-top: 128px;
+    }
+}

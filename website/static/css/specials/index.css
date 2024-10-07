@@ -1,0 +1,84 @@
+:root {
+    --mainBgColor: #0077ff;
+    --color: #4e93ee;
+    --white: #FFFFFF;
+    --highlightColor: #F5DEB3;
+    --black: #000000;
+}
+#heroSect {
+    padding-left: 200px;
+    padding-right: 200px;
+    margin: 10px;
+}
+/* introCont */
+#introCont {
+    margin-bottom: 128px;
+}
+#introCont #introNav {
+    text-align: center;
+}
+#introCont #introNav a {
+    text-decoration: none;
+    color: var(--mainBgColor);
+    margin-left: 64px;
+    transition: 0.5s;
+}
+#introCont #introNav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+#introCont h1 {
+    text-align: center;
+    font-size: 64px;
+    margin-bottom: -30px;
+}
+#introCont h2 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+}
+#introCont #introTxt {
+    margin-top: 84px;
+    font-weight: 400;
+}
+#introCont #introTxt div {
+    margin-bottom: 64px;
+}
+#introCont #introTxt h2 {
+    text-align: left;
+}
+#introCont strong {
+    font-weight: 600;
+}
+
+
+
+
+
+@media screen and (max-width: 920px){
+    #heroSect {
+        padding-left: 50px;
+        padding-right: 50px;
+        margin: 10px;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    nav #navCont {
+        flex-direction: column;
+    }
+    nav #navCont #navLBtnCont {
+        margin-top: 16px;
+    }
+}
+
+@media screen and (max-width: 395px){
+    nav #navCont #navBtnCont {
+        display: flex;
+        flex-direction: column;
+    }
+    #heroSect {
+        margin-top: 128px;
+    }
+}

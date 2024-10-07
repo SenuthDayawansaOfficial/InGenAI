@@ -1,0 +1,77 @@
+#settingsCont {
+    position: fixed;
+    top: 6rem;
+    width: 550px;
+    height: auto;
+    min-height: 400px;
+    /* overflow: scroll; */
+    padding: 10px;
+    padding-bottom: 30px;
+    margin: 10px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    font-family: "Fredoka";
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+#settingsCont #closeBtn {
+    text-align: right;
+    padding-bottom: 10px;
+}
+.actived {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transition: 0.5s !important;
+    z-index: 1 !important;
+    transition: 0.5s !important;
+}
+.active {
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+}
+#deleteAccBtn {
+    padding: 5px;
+    border: 2px solid crimson;
+    border-radius: 5px;
+    background-color: crimson;
+    color: white;
+    transition: 0.5s;
+    outline: none;
+}
+#deleteAccBtn:hover,
+#deleteAccBtn:focus {
+    background-color: white;
+    color: crimson;
+}
+#changePswBtn {
+    padding: 5px;
+    border: 2px solid lightblue;
+    border-radius: 5px;
+    background-color: lightblue;
+    color: black;
+    transition: 0.5s;
+    outline: none;
+}
+#changePswBtn:hover,
+#changePswBtn:focus {
+    background-color: white;
+    color: black;
+}
+#darkModeBtn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+#settingsNavBtn {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: 0.5s;
+    font-weight: 600;
+}
+#settingsNavBtn:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}

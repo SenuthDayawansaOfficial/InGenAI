@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+{% block title %}
+<title>App | InGen AI LCC</title>
+{% endblock %}
+{% block link %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard/dashboard.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard/dashboardNavSpecial.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dashboard/mediaScreenBreaks.css') }}">
+
+{% endblock %}
+{% block content %}
+<div id="navLBtnCont">
+    <a href="/app">{{ current_user.first_name }}</a>
+    <p onclick="toggles()" id="settingsNavBtn"><i class="fa-solid fa-gear"></i></p>
+    <a href="/logout"><i class="fa-solid fa-power-off"></i></a>
+</div>
+
+<div id="introCont">                
+    <h1>InGen.AI</h1>
+    <h2>The next generation of imagination</h2>
+    <div id="introNav">
+        <a href="">Try Now</a>
+        <a href="">Register</a>
+        <a href="">Documentation</a>
+    </div>
+    <div id="introTxt">
+        <div>
+            <h2>Key Features of InGen.AI</h2>
+            <ul>
+                <li><strong>Smart Task Management:</strong> Analize and categorizes & prioritizes the tasks based on your preferences.</li>
+                <li><strong>Natural Language Processing:</strong> Interact through voice or text naturally.</li>
+                <li><strong>Data Insights and Analytics:</strong> Performance tracking</li>
+                <li><strong>Integration with Popular Apps:</strong> Connect and work with Google Drive, Slack, Jira and more.</li>
+                <li><strong>Security and Privacy First:</strong> Ensures data safety with E2E encryption.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div id="introCont">                
+    
+</div>
+{% endblock %}
